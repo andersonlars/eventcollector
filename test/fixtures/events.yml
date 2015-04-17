@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event_id: MyString
+  event_desc: MyText
+  event_date: 2015-04-17 11:05:32
+  event_category: MyString
+  user_id: 
+  event_time: 2015-04-17 11:05:32
+  authentication_key: MyString
+
+two:
+  event_id: MyString
+  event_desc: MyText
+  event_date: 2015-04-17 11:05:32
+  event_category: MyString
+  user_id: 
+  event_time: 2015-04-17 11:05:32
+  authentication_key: MyString
