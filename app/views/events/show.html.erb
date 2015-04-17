@@ -1,39 +1,34 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Event -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Event %></h1>
+</div>
 
-<p>
-  <strong>Event:</strong>
-  <%= @event.event_id %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:event_id) %></dt>
+      <dd><pre class="prettyprint"><%= @event.event_id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:event_desc) %></dt>
+      <dd><pre class="prettyprint"><%= @event.event_desc %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:event_date) %></dt>
+      <dd><pre class="prettyprint"><%= @event.event_date %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:event_category) %></dt>
+      <dd><pre class="prettyprint"><%= @event.event_category %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:event_time) %></dt>
+      <dd><pre class="prettyprint"><%= @event.event_time %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:authentication_key) %></dt>
+      <dd><pre class="prettyprint"><%= @event.authentication_key %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Event desc:</strong>
-  <%= @event.event_desc %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              events_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_event_path(@event), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              event_path(@event),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Event date:</strong>
-  <%= @event.event_date %>
-</p>
-
-<p>
-  <strong>Event category:</strong>
-  <%= @event.event_category %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @event.user %>
-</p>
-
-<p>
-  <strong>Event time:</strong>
-  <%= @event.event_time %>
-</p>
-
-<p>
-  <strong>Authentication key:</strong>
-  <%= @event.authentication_key %>
-</p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
